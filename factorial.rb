@@ -48,17 +48,10 @@
 
 # iterative 
 def factorial(n)
-  if n == 1 || n == 0
-    result = 1  
-  elsif n < 0 
-    result = "negative factorials do not exist"
-  else 
-    while n >= 2 
-      result += result * n * (n - 1)
-      n -= 1 
-    end
-  end
-  result 
+  (1..n).reduce(1) do |memo, num|
+    # n < 0 ? "negative factorials do not exist" : memo * num 
+    memo * num 
+  end 
 end 
 
 
