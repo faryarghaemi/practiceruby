@@ -35,6 +35,7 @@ def find_binary(num, array)
   middle_index = (array.length / 2).floor 
   if num > middle_index 
     array[middle_index..-1]
+  end 
 end 
 
 p find_linear(3, [2, 1, 4, 5, 3]) # index => 4 
