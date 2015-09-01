@@ -4,6 +4,7 @@
 
 
 # examples 
+
 # linear
 # find(3, [2, 1, 4, 3, 5]) 
 # look through the array one item at a time until you find the item 
@@ -15,7 +16,7 @@
 require 'pry' 
 
 # linear 
-def find(num, array)
+def find_linear(num, array)
   result = []
   array.each_with_index do |item, index| 
     if item == num
@@ -29,20 +30,18 @@ def find(num, array)
 end 
 
 # binary 
-def find(num, array)
-  array = array.sort
-  index = (array.length / 2).floor
-  while array[index] != num 
-    if array[index] > num 
-    
-    end 
-
-
-  end 
+def find_binary(num, array)
+  return [] if array.empty? 
+  middle_index = (array.length / 2).floor 
+  if num > middle_index 
+    array[middle_index..-1]
 end 
 
-p find(3, [2, 1, 4, 5, 3]) # index => 4 
-p find(3, [2, 1, 4, 6, 5, 7]) # "the item does not exist in the array"
+p find_linear(3, [2, 1, 4, 5, 3]) # index => 4 
+p find_binary(3, [2, 1, 4, 5, 3]) # index => 4 
+p find_linear(3, [2, 1, 4, 6, 5, 7]) # "the item does not exist in the array"
+p find_binary(3, [2, 1, 4, 6, 5, 7]) # "the item does not exist in the array"
+p find_binary(3, []) # []
 
 
 
